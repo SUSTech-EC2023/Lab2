@@ -49,14 +49,14 @@ for i = 1:populationSize/2
         parentIndexes = [parentIndexes, index];
     end
     % recombination method
-    [offspring(2*i-1,:), offspring(2*i,:)] = your_recombination_operator(population(parentIndexes(1),:), population(parentIndexes(2),:), recombination_weight);
+    [offspring(2*i-1,:), offspring(2*i,:)] = crossover(population(parentIndexes(1),:), population(parentIndexes(2),:), recombination_weight);
 end
 % Mutation
 %% TODO
 mutation_rate = 1/dimension;
 for i = 1:populationSize
     % mutation method
-    offspring(i,:) = your_mutation_operator(offspring(i,:),mutation_rate, lower_bound, upper_bound);
+    offspring(i,:) = mutation(offspring(i,:),mutation_rate, lower_bound, upper_bound);
     offspring_fitness(i) = objective(offspring(i,:));
 end
 
