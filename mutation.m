@@ -25,7 +25,7 @@ function [offspring] = mutation(p, mr, lb, ub)
 
 
 dim = size(p, 2);
-disp([p, dim]);
+% disp([p, dim]);
 chosenMat = rand(1, dim);
 idx4mut = chosenMat < mr;
 randMat = lb + (ub - lb) .* rand(1, dim);
